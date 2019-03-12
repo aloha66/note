@@ -1,0 +1,36 @@
+{
+    "workbench.colorTheme": "Solarized Light",
+    "workbench.iconTheme": "vscode-icons",
+    "files.autoSave": "onFocusChange",
+    "workbench.startupEditor": "newUntitledFile",
+    "search.location": "sidebar",
+    "window.zoomLevel": 0,
+    "breadcrumbs.enabled": false,
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript"
+    },
+    "emmet.includeLanguages": {
+        "wxml": "html"
+    },
+    "minapp-vscode.disableAutoConfig": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [{
+            "language": "vue",
+            "autoFix": true
+        },
+        {
+            "language": "html",
+            "autoFix": true
+        },
+        {
+            "language": "javascript",
+            "autoFix": true
+        },
+        {
+            "language": "javascriptreact",
+            "autoFix": true
+        }
+    ]
+}
