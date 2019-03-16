@@ -33,3 +33,38 @@
      `upsert`和`multi`，默认参数顺序。`upsert`为`true`时，查询结果没用就添加一条新纪录，反之；`multi`为`true`批量修改。
 
      例子：`db.集合名.update({...查询条件对象},{$set:{...替换的对象}，{upsert:true,multi:false}})`
+
+
+## mongoose
+- schema: 定义集合，实现和MongoDB的映射，不具备集合操作能力
+- model: 操作一个集合
+- entity: 由model创建的实体，跨域操作集合
+
+```
+//创建用户Schema
+const userSchema = new Schema({
+    UserId:Schema.Types.ObjectId,
+    username:{unique:true,type:String},
+    createAt:{type:Date,default:Date.now()},
+})
+//发布模型
+mongoose.model('User',userSchema)
+
+userSchema.pre('save',next => {
+  // 实例调用钩子操作，this可以获取并改变当前触发钩子的数据，结束要调用next
+  // 在钩子改变this某项的数据类型是不会再校验的，最终数据类型按照Schema所定义的类型
+})
+```
+### mongoose操作
+```
+const User = mongoose.model('User')
+// 批量插入
+User.insertMany(arr).then(...)
+// 创建一个实例
+const user1 = new User({username:'user1'})
+//保存
+user1.save().then(() => {...})
+//查询,find()之类的命令返回mongoose的对象Query,exec()返回Promise
+const users = await User.find().exec()
+
+```
