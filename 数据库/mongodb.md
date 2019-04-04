@@ -34,11 +34,11 @@
 
      例子：`db.集合名.update({...查询条件对象},{$set:{...替换的对象}，{upsert:true,multi:false}})`
 
-
 ## mongoose
-- schema: 定义集合，实现和MongoDB的映射，不具备集合操作能力
+
+- schema: 定义集合，实现和 MongoDB 的映射，不具备集合操作能力
 - model: 操作一个集合
-- entity: 由model创建的实体，跨域操作集合
+- entity: 由 model 创建的实体，跨域操作集合
 
 ```
 //创建用户Schema
@@ -55,7 +55,9 @@ userSchema.pre('save',next => {
   // 在钩子改变this某项的数据类型是不会再校验的，最终数据类型按照Schema所定义的类型
 })
 ```
-### mongoose操作
+
+### mongoose 操作
+
 ```
 const User = mongoose.model('User')
 // 批量插入
