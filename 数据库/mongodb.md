@@ -58,6 +58,9 @@ userSchema.pre('save',next => {
 
 ### mongoose 操作
 
+// 核心代码，是否开启测试
+`mongoose.set('debug', true);`
+
 ```
 const User = mongoose.model('User')
 // 批量插入
