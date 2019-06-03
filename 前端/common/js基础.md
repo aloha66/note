@@ -18,6 +18,8 @@
    test1()
    ```
 6. `let`和`const`存在暂时性死区，不能在声明前就使用变量。
+7. 准确判断类型`Object.prototype.toString.call(obj) // [object Object]`
+8. 对象拆箱转换顺序`valueOf`、`toString`，`String`类型转换顺序相反
 
 ## new
 
