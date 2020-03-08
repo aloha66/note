@@ -1,0 +1,1 @@
+在vscode调试的时候，默认启动cmd运行程序，在自己写的文件目录路径可能存在读取不到的情况，解决方案：在`launch.json`加入`"env": {"PYTHONPATH": "${workspaceRoot}"}`
